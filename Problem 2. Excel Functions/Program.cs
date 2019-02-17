@@ -54,6 +54,7 @@ namespace Problem_2._Excel_Functions
                     int rCol = 0;
                     for (int col = 0; col < cols; col++)
                     {
+                        
                         if (indexHead!=col)
                         {
                             result[row][rCol] = table[row][col];
@@ -90,6 +91,7 @@ namespace Problem_2._Excel_Functions
                         }
                     }
 
+
                 var result = modArray.OrderBy(row => row[indexHead]).ToArray();
                     
                 for (int row = 0; row < rows-1; row++)
@@ -103,9 +105,6 @@ namespace Problem_2._Excel_Functions
                 int indexHead =-1;
                 int indexRow = -1;
 
-
-               var res= table.Where(x => x.ToString() == command[2]);
-                string[][] result = new string[rows][];
                 for (int row = 0; row < rows; row++)
                 {
                     for (int col = 0; col < cols; col++)

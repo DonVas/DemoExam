@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 2. Excel Functions"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "..\..\..\Desktop\New folder\Repository\Repository.csproj", "{55A9D156-0D09-4D1C-8C13-6FE1D988882A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "multiArray", "multiArray\multiArray.csproj", "{919CB1E8-977A-4718-A187-C50070556413}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{55A9D156-0D09-4D1C-8C13-6FE1D988882A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55A9D156-0D09-4D1C-8C13-6FE1D988882A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55A9D156-0D09-4D1C-8C13-6FE1D988882A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919CB1E8-977A-4718-A187-C50070556413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919CB1E8-977A-4718-A187-C50070556413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919CB1E8-977A-4718-A187-C50070556413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919CB1E8-977A-4718-A187-C50070556413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
