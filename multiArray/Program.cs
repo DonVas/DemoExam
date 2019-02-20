@@ -34,14 +34,100 @@ namespace multiArray
             //remove colon i=0 ore i!=0
             int[][] newArray = myJaggedArray.Select(a => a.Where((s, i) => i != 0).ToArray()).ToArray();
 
-            newArray=AddRow(newArray,5,new int[] {1, 5, 6, 6});
+            //newArray=AddRow(newArray,02,new int[] {1, 5, 6, 6,7,8,9,6,5});
+            //Console.WriteLine();
+            //Console.WriteLine(string.Join(Environment.NewLine, newArray.Select(x => string.Join(" ", x))));
+
+            //newArray = AddColumn(newArray, 2,new int[] { 1, 5, 6, 6 });
+
+            newArray = AddRow1(newArray,5, new int[] { 1,2,3,4,5,6,7,899,777 });
             Console.WriteLine();
             Console.WriteLine(string.Join(Environment.NewLine, newArray.Select(x => string.Join(" ", x))));
 
-            newArray = AddColumn(newArray, 2,new int[] { 1, 5, 6, 6 });
+            newArray = AddColum1(newArray, 0, new int[] { 1, 2, 3 });
             Console.WriteLine();
             Console.WriteLine(string.Join(Environment.NewLine, newArray.Select(x => string.Join(" ", x))));
+
+            newArray = AddColum1(newArray, 2, new int[] { 1, 2, 3, 4, 5 });
+            Console.WriteLine();
+            Console.WriteLine(string.Join(Environment.NewLine, newArray.Select(x => string.Join(" ", x))));
+            //newArray = AddColum1(newArray,0,new int[] {9,9,9,9,9});
         }
+
+        private static int[][] AddColum1(int[][] newArray, int ofset, int[] add)
+        {
+            int rows = newArray.Length;
+
+            int[][] resultArray = new int[rows][];
+            int addCols = add.Length;
+
+            for (int row = 0; row < rows; row++)
+            {
+                int cols = newArray[row].Length + 1;
+
+                for (int col = 0; col < cols; col++)
+                {
+                    if (row < addCols)
+                    {
+                        if (col == 0)
+                        {
+                            resultArray[row] = new int[cols];
+                        }
+                      
+                        if (col == ofset)
+                        {
+                            resultArray[row][col] = add[row];
+                        }
+                        else if(col!=0)
+                        {
+                            resultArray[row][col] = newArray[row][col];
+                        }
+                        else
+                        {
+                            resultArray[row][col] = newArray[row][col];
+                        }
+                    }
+                    else
+                    {
+                        if (col == 0)
+                        {
+                            cols--;
+                            resultArray[row] = new int[cols];
+                        }
+
+                        resultArray[row][col] = newArray[row][col];
+                    }
+                }
+            }
+
+            return resultArray;
+        }
+
+        private static int[][] AddRow1( int[][] newArray, int ofset, int []add)
+        {
+            int rows = newArray.Length;
+
+            int[][] resultArray= new int[rows+1][];
+
+            for (int row = 0; row < rows+1; row++)
+            {
+                if (row == ofset)
+                {
+                    resultArray[row] = add;
+                }
+                else if (ofset<row)
+                {
+                    resultArray[row] = newArray[row-1];
+                }
+                else
+                {
+                    resultArray[row] = newArray[row];
+                }
+            }
+
+            return resultArray;
+        }
+
         static int[][] AddRow(int[][] original,int ofset, int[] added)
         {
             int lastRow = original.Length+1;
